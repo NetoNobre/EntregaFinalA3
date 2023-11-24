@@ -22,6 +22,19 @@ async function login({user, password}){
     return newUser
 }
 
+async function createUser(data){
+    const verify = await User.findOne({where:{user:data.user}})
+    if (verify){
+        throw new Error('409|Usuário já existente')
+    }
+    try {
+        await User.create({...data, password:md5(data.password)})
+        return {message:'Cadastro efetuado com sucesso'}
+    }catch(error){
+        throw new Error(`500|${error.message}`)
+    }
+    
+}
 module.exports = {
-    login
+    login, createUser
 }
