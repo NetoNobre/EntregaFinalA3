@@ -11,12 +11,17 @@ async function login({user, password}){
         throw new Error('401|Senha incorreta')
     }
     const newUser = {
-        ...verify,
+        id:verify.id,
+        firstName:verify.firstName,
+        lastName:verify.lastName,
+        password:verify.password,
+        email:verify.email,
+        user:verify.user,
         token: generateJWT(verify)
     }
     return newUser
 }
 
-module.export = {
+module.exports = {
     login
 }

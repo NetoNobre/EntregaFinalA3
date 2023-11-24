@@ -5,6 +5,6 @@ async function login(req, res){
     res.status(200).json(result)
 }
 
-module.export = {
+module.exports = {
     login
 }
