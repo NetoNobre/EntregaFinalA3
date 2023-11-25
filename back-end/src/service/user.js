@@ -1,9 +1,10 @@
 const {User} = require('../database/models')
 const md5 = require('md5')
 const generateJWT = require('../util/generatejwt')
+const { getUser } = require('../models/user')
 
 async function login({user, password}){
-    const verify = await User.findOne({where:{user}})
+    const verify = await getUser(user)
     if (!verify){
         throw new Error('404|Esse usuário não existe')
     }
