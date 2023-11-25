@@ -1,7 +1,7 @@
 const {User} = require('../database/models')
 const md5 = require('md5')
 const generateJWT = require('../util/generatejwt')
-const { getUser } = require('../models/user')
+const { getUser, insertUser } = require('../models/user')
 
 async function login({user, password}){
     const verify = await getUser(user)
@@ -24,12 +24,12 @@ async function login({user, password}){
 }
 
 async function createUser(data){
-    const verify = await User.findOne({where:{user:data.user}})
+    const verify = await getUser(data.user)
     if (verify){
         throw new Error('409|Usuário já existente')
     }
     try {
-        await User.create({...data, password:md5(data.password)})
+        await insertUser({...data, password:md5(data.password)})
         return {message:'Cadastro efetuado com sucesso'}
     }catch(error){
         throw new Error(`500|${error.message}`)
