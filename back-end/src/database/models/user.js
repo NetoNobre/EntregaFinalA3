@@ -31,7 +31,7 @@ const UserModel = (sequelize, DataTypes) => {
             allowNull: false
         },
 
-    });
+    },{timestamps: false,});
 
     return User;
 };
