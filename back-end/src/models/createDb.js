@@ -103,6 +103,7 @@ connection.query('CREATE DATABASE IF NOT EXISTS dev_games', (err) => {
             id_plataforma INT NOT NULL,
             FOREIGN KEY (id_jogo) REFERENCES Jogo(id),
             FOREIGN KEY (id_plataforma) REFERENCES Plataforma(id)
+            UNIQUE KEY unique_jogo_plataforma (id_jogo, id_plataforma)
           );
         `
                 connection.query(createTableJogoPlataforma, (err) => {

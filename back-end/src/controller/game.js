@@ -20,6 +20,11 @@ async function getAllGames(_req, res) {
     res.status(200).json(result);
 }
 
+async function getPlatformByGames(req, res) {
+    const result = await gameService.getPlatformByGames(req.params.id);
+    res.status(200).json(result);
+  }
+
 module.exports = {
-    insertGame, updateGame, deleteGame, getAllGames
+    insertGame, updateGame, deleteGame, getAllGames, getPlatformByGames
 }
