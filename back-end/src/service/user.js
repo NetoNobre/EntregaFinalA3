@@ -1,10 +1,9 @@
-const { User } = require('../database/models')
-const md5 = require('md5')
+const userModel = require('../models/user')
 const generateJWT = require('../util/generatejwt')
-const { getUser, insertUser, patchUser, deleteUser } = require('../models/user')
+const md5 = require('md5')
 
 async function login({ user, password }) {
-    const verify = await getUser(user)
+    const verify = await userModel.getUser(user)
     if (!verify) {
         throw new Error('404|Esse usuário não existe')
     }
@@ -24,28 +23,57 @@ async function login({ user, password }) {
 }
 
 async function createUser(data) {
-    const verify = await getUser(data.user)
+    const verify = await userModel.getUser(data.user)
     if (verify) {
         throw new Error('409|Usuário já existente')
     }
     try {
-        await insertUser({ ...data, password: md5(data.password) })
+        await userModel.insertUser({ ...data, password: md5(data.password) })
         return { message: 'Cadastro efetuado com sucesso' }
     } catch (error) {
         throw new Error(`500|${error.message}`)
     }
-
 }
 
 async function updateUser(id, updateUser) {
-    const result = await patchUser(id, { ...updateUser, password: md5(updateUser.password) })
+    const result = await userModel.patchUser(id, { ...updateUser, password: md5(updateUser.password) });
     return result;
 }
 
 async function deleteUserById(id) {
-    await deleteUser(id)
-}
-module.exports = {
-    login, createUser, updateUser, deleteUserById
+    await userModel.deleteUserById(id);
 }
 
+async function logicalUserDeletionById(id, delit) {
+    await userModel.logicalUserDeletionById(id, delit);
+}
+
+async function getGamesByUserId(userId) {
+    const result = await userModel.getGamesByUserId(userId);
+    return result;
+}
+
+async function addGameToUser(userId, jogoId) {
+    try {
+        if (!userId || !jogoId) throw new Error('400|userId e jogoId são obrigatórios.');
+        await userModel.addGameToUser(userId, jogoId);
+    } catch (error) {
+        throw new Error('409|Usuário já possui este jogo.');
+    }
+
+}
+
+async function removeGameFromUser(userId, jogoId) {
+    await userModel.removeGameFromUser(userId, jogoId);
+}
+
+module.exports = {
+    login,
+    createUser,
+    updateUser,
+    deleteUserById,
+    logicalUserDeletionById,
+    getGamesByUserId,
+    addGameToUser,
+    removeGameFromUser,
+}

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "node ./src/models/createDb.js",
     "start": "node ./src/api/server.js",
     "dev": "nodemon ./src/api/server.js"
   },
@@ -17,10 +17,9 @@
     "jsonwebtoken": "^9.0.2",
     "md5": "^2.3.0",
     "mysql2": "^3.6.5",
-    "nodemon": "^3.0.1",
-    "sequelize": "^6.35.1"
+    "nodemon": "^3.0.1"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.6.2"
+   
   }
 }
