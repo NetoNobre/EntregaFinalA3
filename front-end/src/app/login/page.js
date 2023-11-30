@@ -3,6 +3,7 @@ import { loginAxios } from "@/util/axios"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { createHash } from 'crypto'
+import { setCookie } from 'cookies-next'
 
 
 export default function Login() {
@@ -24,7 +25,7 @@ export default function Login() {
         console.log(result.password)
     
         if (result.user === user && result.password === createHash('md5').update(password).digest('hex')){
-            setCookie('user', JSON.stringify(user))
+           setCookie('user', JSON.stringify(result))
             push("/home")
         }else {
             alert("Usuário ou senha incorreto")
