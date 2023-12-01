@@ -12,7 +12,8 @@ export default function NavBar(){
                 </div>
                 <div className="menu">
                     <ul>                  
-                        <li><Link href="/jogos">Jogos</Link></li>
+                        <li><Link href="/crud_jogos">Cadastrar Jogos</Link></li>
+                        <li><Link href="/crud_plataforma">Cadastrar Plataforma</Link></li>
                         <li><Link href="/noticias">Noticias</Link></li>
                         <li><Link href="/comunidade">Comunidade</Link></li>
                         <li><Link href="/sobre">Sobre Nós</Link></li>
