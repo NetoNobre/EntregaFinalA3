@@ -70,7 +70,7 @@ export default function Login() {
       />
     </form>
     <a id="a1" href="esqueci-senha.html">Esqueceu sua senha?</a>
-    <p>Ainda não tem uma conta?<a href="criar.html">Criar conta</a></p>
+    <p id="p1" >Ainda não tem uma conta?<a href="criar.html">Criar conta</a></p>
     </div>
     </section>
   )

@@ -23,6 +23,26 @@ export const addGamesAxios = async (data) => {
   }
 };
 
+export const gatGamesAxios = async (id) => {
+  try {
+    const URL = `${URL_BASE}/user/games/${id}`;
+    const response = await axios.get(URL);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const removeGamesAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/user/delete-game`;
+    const response = await axios.post(URL, data);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
 // Rota Jogo
 export const gamesAxios = async () => {
   try {
@@ -34,4 +54,33 @@ export const gamesAxios = async () => {
   }
 };
 
+export const createJogoAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/game/insert`;
+    const response = await axios.post(URL, data);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
 // Rota Plataforma
+export const getPlataformaAxios = async () => {
+  try {
+    const URL = `${URL_BASE}/platform`;
+    const response = await axios.get(URL);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const createPlataformaAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/platform/insert`;
+    const response = await axios.post(URL, data);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
