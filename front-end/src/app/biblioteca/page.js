@@ -2,7 +2,7 @@
 
 import { CardBiblioteca } from "@/components/cardBiblioteca";
 import NavBarHome from "@/components/navBarHome";
-import { gatGamesAxios } from "@/util/axios";
+import { getGamesAxios } from "@/util/axios";
 import { useEffect, useState } from "react";
 
 export default function Biblioteca() {
@@ -17,7 +17,7 @@ export default function Biblioteca() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await gatGamesAxios(user.id);
+        const result = await getGamesAxios(user.id);
         setGames(result);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -31,7 +31,7 @@ export default function Biblioteca() {
     <main>
       <NavBarHome />
       <div className="home-section">
-        {games.map(({ id, cat, nome, nota, plataforma_disp, recomendacao, status }) => (
+        {games && games.map(({ id, cat, nome, nota, plataforma_disp, recomendacao, status }) => (
           <CardBiblioteca
             key={id}
             userId={user.id}

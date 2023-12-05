@@ -23,7 +23,8 @@ body {
 }
 
 .carousel-img {
-  height: 580px;
+  max-width: 100%;
+  height: auto;
 }
 
 .carousel-caption {
@@ -43,8 +44,9 @@ body {
 /*CSS NavBar*/
 .nav {
   background-color: #1b1f27;
-  padding: 5px;
+  padding: 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   position: fixed;
   width: 100%;
@@ -54,6 +56,7 @@ body {
 
 .nav-div {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -61,6 +64,7 @@ body {
 .nav-logo {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .nav-logo-link {
@@ -76,6 +80,8 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-li {
@@ -88,16 +94,7 @@ body {
   font-weight: bold;
 }
 
-
-.nav-li-link:hover {
-  color: #ffd700;
-}
-
-.nav-li-link.active {
-  color: #1d0547;
-}
-
-/* CSS Page Login*/
+/* CSS Page Login */
 .area-login {
   display: flex;
   justify-content: center;
@@ -105,16 +102,16 @@ body {
   height: 100vh;
 }
 
-
 .login {
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #181920;
-    border-radius: 10px;
-    width: 375px;
-    height: 425px;
-    padding: 35px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #181920;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 375px;
+  height: auto;
+  padding: 35px;
 }
 
 .login-form {
@@ -137,8 +134,7 @@ body {
 input::placeholder {
   color: #CBD0F7;
   font-size: 14px;
-  width: 260px;
-  
+  width: 100%;
 }
 
 .login img {
@@ -154,18 +150,18 @@ input::placeholder {
 }
 
 .login-input-submit[type="submit"] {
-    margin-top: 10px;
-    padding-left: 10px;
-    display: block;
-    background-color: #5568fe;
-    color: #CBD0F7;
-    font-size: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    height: 45px;
-    border: 5px;
-    border-radius: 8px;
+  margin-top: 10px;
+  padding-left: 10px;
+  display: block;
+  background-color: #5568fe;
+  color: #CBD0F7;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  height: 45px;
+  border: 5px;
+  border-radius: 8px;
 }
 
 .login-input-submit[type="submit"]:hover {
@@ -191,7 +187,7 @@ a {
   text-decoration: underline;
 }
 
-/* CSS Cadastro*/
+/* CSS Cadastro */
 .cadastro-main {
   display: flex;
   flex-direction: column;
@@ -216,7 +212,7 @@ a {
   text-decoration: underline;
 }
 
-/*CSS Card Games*/
+/* CSS Card Games */
 .home-section {
   display: flex;
   flex-wrap: wrap;
@@ -224,8 +220,10 @@ a {
   padding: 20px;
   margin-top: 20px;
 }
+
 .card-div {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -241,7 +239,6 @@ a {
 .card-p {
   color: #CBD0F7;
   margin: 5px 0;
-  
 }
 
 .span_card {
@@ -265,8 +262,10 @@ a {
   background-color: #202020;
 }
 
-
 /* CSS de Noticias */
+.noticias {
+  margin: 50px;
+}
 
 h1 {
   color: #b40606;
@@ -285,11 +284,15 @@ h4 {
   color: white;
   text-align: center;
 }
+
 p {
   color: #3CFAD8;
 }
 
 /* CSS de Sobre Nós */
+.sobre {
+  margin: 50px;
+}
 
 .sobre-p {
   color: #3CFAD8;
@@ -336,7 +339,124 @@ p {
 
 /* Adicionando um estilo básico para o layout responsivo */
 @media only screen and (max-width: 600px) {
-  form {
-    width: 80%;
+  .nav {
+    flex-direction: column;
+    align-items: center;
   }
+
+  .nav-logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .login,
+  .card-div {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Crud Lista de Jogos */
+.lista-jogos {
+  max-width: 800px;
+}
+
+.lista-jogos-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.lista-jogos-title img {
+  cursor: pointer;
+}
+
+.lista-jogos-h1 {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.lista-jogos-ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-jogos-li {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista-jogos-p {
+  margin: 0;
+}
+
+.lista-jogos-input[type="button"] {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.lista-jogos-input[type="button"]:hover {
+  background-color: #45a049;
+}
+
+.lista-jogos-input[type="button"]:last-child {
+  background-color: #f44336;
+}
+
+.lista-jogos-input[type="button"]:last-child:hover {
+  background-color: #d32f2f;
+}
+
+/* CSS Comunidade */
+.div-chat {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 5px;
+}
+
+.input-chat-message {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.input-chat-btn {
+  background-color: #4caf50;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  width: 25%;
+  padding: 5px;
+}
+
+.input-chat-btn:hover {
+  background-color: #45a049;
+}
+
+.chat-messages {
+  width: 100%;
+  height: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+  position: fixed;
+  bottom: 50px;
 }

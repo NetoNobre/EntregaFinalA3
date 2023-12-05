@@ -23,7 +23,7 @@ export const addGamesAxios = async (data) => {
   }
 };
 
-export const gatGamesAxios = async (id) => {
+export const getGamesAxios = async (id) => {
   try {
     const URL = `${URL_BASE}/user/games/${id}`;
     const response = await axios.get(URL);
@@ -36,6 +36,16 @@ export const gatGamesAxios = async (id) => {
 export const removeGamesAxios = async (data) => {
   try {
     const URL = `${URL_BASE}/user/delete-game`;
+    const response = await axios.post(URL, data);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const createUserAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/user/create`;
     const response = await axios.post(URL, data);
     return response.data.message;
   } catch (error) {
@@ -64,6 +74,26 @@ export const createJogoAxios = async (data) => {
   }
 };
 
+export const deletGamesAxios = async (id) => {
+  try {
+    const URL = `${URL_BASE}/game/delete/${id}`;
+    const response = await axios.delete(URL);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateGamesAxios = async (id, data) => {
+  try {
+    const URL = `${URL_BASE}/game/update/${id}`;
+    const response = await axios.patch(URL, data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 // Rota Plataforma
 export const getPlataformaAxios = async () => {
   try {
@@ -79,6 +109,26 @@ export const createPlataformaAxios = async (data) => {
   try {
     const URL = `${URL_BASE}/platform/insert`;
     const response = await axios.post(URL, data);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updatePlataformaAxios = async (id, data) => {
+  try {
+    const URL = `${URL_BASE}/platform/update/${id}`;
+    const response = await axios.patch(URL, data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deletPlataformaAxios = async (id) => {
+  try {
+    const URL = `${URL_BASE}/platform/delete/${id}`;
+    const response = await axios.delete(URL);
     return response.data.message;
   } catch (error) {
     throw error;

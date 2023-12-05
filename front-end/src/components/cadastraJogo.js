@@ -1,11 +1,11 @@
 'use client'
 
-import { createJogoAxios, getPlataformaAxios } from "@/util/axios";
+import { createJogoAxios, getPlataformaAxios, updateGamesAxios } from "@/util/axios";
 import { useEffect, useState } from "react"
 
 export function CadastrarJogo() {
   const [platform, setPlatform] = useState([]);
-  const [user, setUser] = useState('');
+  const [updateGame, setUpdateGame] = useState(null);
   const [nome, setNome] = useState('');
   const [cat, setCat] = useState('');
   const [plataforma_que, setPlataforma_que] = useState('');
@@ -18,7 +18,7 @@ export function CadastrarJogo() {
       try {
         const result = await getPlataformaAxios();
         setPlatform(result);
-        setUser(JSON.parse(localStorage.getItem('user')));
+        setUpdateGame(JSON.parse(localStorage.getItem('game')));
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -27,19 +27,59 @@ export function CadastrarJogo() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const setInfo = () => {
+      setNome(updateGame.nome)
+      setCat(updateGame.cat)
+      setPlataforma_que(updateGame.plataforma_disp)
+      setNota(updateGame.nota)
+      setStatus(updateGame.status)
+      setRecomendacao(updateGame.recomendacao)
+    }
+    if (updateGame) setInfo()
+  }, [updateGame]);
+
+  const limparinputi = () => {
+    setNome('')
+    setCat('')
+    setPlataforma_que('')
+    setNota('')
+    setStatus('')
+    setRecomendacao('')
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const newJogo = { nome, cat, plataforma_que, nota, status, recomendacao }
       const result = await createJogoAxios(newJogo)
-      if(result) alert(result)
+      if (result) {
+        limparinputi();
+        alert(result);
+      }
     } catch (error) {
-      alert('Error ao cadastrar o jogo')
+      alert(error.response.data.message)
     }
   };
 
+  const newUpdateGame = async (e) => {
+    e.preventDefault();
+    try {
+      const newJogo = { nome, cat, plataforma_que, nota, status, recomendacao }
+      const result = await updateGamesAxios(updateGame.id, newJogo)
+      if (result) {
+        limparinputi();
+        alert(result.message);
+      }
+      limparinputi();
+      localStorage.removeItem('game');
+    } catch (error) {
+      alert(error.response.data.message)
+    }
+  }
+
   return (
-    <form className="cj-form" onSubmit={handleSubmit}>
+    <form className="cj-form">
       <input
         type="text"
         value={nome}
@@ -95,13 +135,22 @@ export function CadastrarJogo() {
         <option value="Sim">Sim</option>
         <option value="Não">Não</option>
       </select>
-      <input
-        type="submit"
-        value="Enviar"
-        name="Enviar"
-        className="cj-input-btn"
-        onClick={handleSubmit}
-      />
+      {
+        updateGame ? <input
+          type="submit"
+          value="Atualizar"
+          name="Atualizar"
+          className="cj-input-btn"
+          onClick={newUpdateGame}
+        /> :
+          <input
+            type="submit"
+            value="Enviar"
+            name="Enviar"
+            className="cj-input-btn"
+            onClick={handleSubmit}
+          />
+      }
     </form>
   );
 }
