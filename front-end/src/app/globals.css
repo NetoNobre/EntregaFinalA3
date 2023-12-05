@@ -23,8 +23,7 @@ body {
 }
 
 .carousel-img {
-  max-width: 100%;
-  height: auto;
+  height: 580px;
 }
 
 .carousel-caption {
@@ -44,9 +43,8 @@ body {
 /*CSS NavBar*/
 .nav {
   background-color: #1b1f27;
-  padding: 10px;
+  padding: 5px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   position: fixed;
   width: 100%;
@@ -56,7 +54,6 @@ body {
 
 .nav-div {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -64,7 +61,6 @@ body {
 .nav-logo {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .nav-logo-link {
@@ -80,8 +76,6 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
 }
 
 .nav-li {
@@ -94,7 +88,16 @@ body {
   font-weight: bold;
 }
 
-/* CSS Page Login */
+
+.nav-li-link:hover {
+  color: #ffd700;
+}
+
+.nav-li-link.active {
+  color: #1d0547;
+}
+
+/* CSS Page Login*/
 .area-login {
   display: flex;
   justify-content: center;
@@ -102,15 +105,15 @@ body {
   height: 100vh;
 }
 
+
 .login {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #181920;
   border-radius: 10px;
-  width: 100%;
-  max-width: 375px;
-  height: auto;
+  width: 375px;
+  height: 425px;
   padding: 35px;
 }
 
@@ -134,7 +137,8 @@ body {
 input::placeholder {
   color: #CBD0F7;
   font-size: 14px;
-  width: 100%;
+  width: 260px;
+
 }
 
 .login img {
@@ -187,7 +191,7 @@ a {
   text-decoration: underline;
 }
 
-/* CSS Cadastro */
+/* CSS Cadastro*/
 .cadastro-main {
   display: flex;
   flex-direction: column;
@@ -212,7 +216,7 @@ a {
   text-decoration: underline;
 }
 
-/* CSS Card Games */
+/*CSS Card Games*/
 .home-section {
   display: flex;
   flex-wrap: wrap;
@@ -222,8 +226,7 @@ a {
 }
 
 .card-div {
-  width: 100%;
-  max-width: 300px;
+  width: 300px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -239,6 +242,7 @@ a {
 .card-p {
   color: #CBD0F7;
   margin: 5px 0;
+
 }
 
 .span_card {
@@ -262,7 +266,9 @@ a {
   background-color: #202020;
 }
 
+
 /* CSS de Noticias */
+
 .noticias {
   margin: 50px;
 }
@@ -290,6 +296,7 @@ p {
 }
 
 /* CSS de Sobre Nós */
+
 .sobre {
   margin: 50px;
 }
@@ -339,28 +346,13 @@ p {
 
 /* Adicionando um estilo básico para o layout responsivo */
 @media only screen and (max-width: 600px) {
-  .nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-logo {
-    margin-bottom: 10px;
-  }
-
-  .nav-li {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .login,
-  .card-div {
-    width: 100%;
-    max-width: none;
+  form {
+    width: 80%;
   }
 }
 
-/* Crud Lista de Jogos */
+/* Crud Lista de Jogos*/
+
 .lista-jogos {
   max-width: 800px;
 }
@@ -402,7 +394,7 @@ p {
   cursor: pointer;
   padding: 5px 10px;
   font-size: 14px;
-  background-color: #4caf50;
+  background-color: #5568fe;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -410,7 +402,7 @@ p {
 }
 
 .lista-jogos-input[type="button"]:hover {
-  background-color: #45a049;
+  background-color: #5568fe;
 }
 
 .lista-jogos-input[type="button"]:last-child {
@@ -421,7 +413,7 @@ p {
   background-color: #d32f2f;
 }
 
-/* CSS Comunidade */
+/*CSS Comunidade*/
 .div-chat {
   display: flex;
   width: 100%;
@@ -454,9 +446,81 @@ p {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  max-height: 300px;
+  maxHeight: 300px;
   overflow: hidden;
-  overflow-y: auto;
+  overflowY: auto;
   position: fixed;
   bottom: 50px;
 }
+
+/*CSS do createUser*/
+
+.area-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #181920;
+  border-radius: 10px;
+  width: 600px;
+  height: 565px;
+  padding: 35px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.336);
+}
+
+.createUser-form {
+  display: flex;
+  width: 100%;
+  top: 100%;
+  flex-direction: column;
+}
+
+.titulo {
+  text-align: center;
+  color: #b40606;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+
+}
+
+.create-input {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #252A34;
+  padding-left: 10px;
+  color: #CBD0F7;
+  border: none;
+  height: 45px;
+  outline: none;
+  border-radius: 8px;
+}
+
+.create-input:focus {
+  border: 1px solid #CBD0F7;
+}
+
+.create-button {
+  display: block;
+  background-color: #5568fe;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  width: 535px;
+  border-radius: 8px;
+  padding: 5px;
+  margin-top: 20px;
+}
+
+.create-button:hover{
+  background-color:#252A34;
+}
+
