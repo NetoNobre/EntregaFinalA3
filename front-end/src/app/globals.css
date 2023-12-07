@@ -510,6 +510,7 @@ p {
 .create-button {
   display: block;
   background-color: #5568fe;
+  color: #CBD0F7;
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
@@ -520,7 +521,154 @@ p {
   margin-top: 20px;
 }
 
-.create-button:hover{
-  background-color:#252A34;
+.create-button:hover {
+  background-color: #252A34;
 }
 
+.area-recuperar-senha {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.recuperar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #181920;
+  border-radius: 10px;
+  width: 365px;
+  height: 320px;
+  padding: 35px;
+
+}
+
+.recuperar-senha {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+#p2 {
+  color: #CBD0F7;
+}
+
+#p3 {
+  color: #CBD0F7;
+}
+
+.recuperar img {
+  width: 60px;
+  height: auto;
+}
+
+.recuperar-span {
+  font-size: 12px;
+  margin: 3px 0 0 1px;
+  color: #b40606;
+  display: none;
+}
+
+.cj-input-btn {
+  background-color: #5568fe;
+  border-radius: 8px;
+}
+
+.recuperar-input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #252A34;
+  padding-left: 10px;
+  color: #CBD0F7;
+  border: none;
+  height: 45px;
+  outline: none;
+  border-radius: 8px;
+}
+
+.recuperar-botao {
+  margin-top: 10px;
+  padding-left: 10px;
+  display: block;
+  background-color: #5568fe;
+  color: #CBD0F7;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  height: 35px;
+  border: 5px;
+  border-radius: 8px;
+}
+
+/*Adicionando um estilo básico para o layout responsivo */
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px; 
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .carousel-img {
+    height: 300px; 
+  }
+
+  .login,
+  .create,
+  .recuperar {
+    width: 80%; 
+  }
+
+  .create-button {
+    width: 100%; 
+  }
+
+  .lista-jogos-title img,
+  .lista-jogos-h1 {
+    font-size: 18px; 
+  }
+}
+
+
+@media only screen and (max-width: 400px) {
+  .nav-logo-link {
+    font-size: 1.2rem; 
+  }
+
+  .nav-li-link {
+    font-size: 0.8rem; 
+  }
+
+  .card-div {
+    width: 100%; 
+    margin: 40px 0;
+  }
+
+  .card-h3 {
+    font-size: 1rem; 
+  }
+
+  .card-button {
+    padding: 8px 15px; 
+    font-size: 0.9em; 
+  }
+
+  .chat-messages {
+    height: 60%; 
+  }
+
+  .input-chat-btn {
+    width: 30%; 
+  }
+}

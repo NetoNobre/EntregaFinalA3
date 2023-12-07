@@ -13,6 +13,16 @@ export const loginAxios = async (data) => {
   }
 };
 
+export const getUserAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/user`;
+    const response = await axios.post(URL, data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const addGamesAxios = async (data) => {
   try {
     const URL = `${URL_BASE}/user/game`;
@@ -28,6 +38,16 @@ export const getGamesAxios = async (id) => {
     const URL = `${URL_BASE}/user/games/${id}`;
     const response = await axios.get(URL);
     return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateUserAxios = async (id, data) => {
+  try {
+    const URL = `${URL_BASE}/user/update/${id}`;
+    const response = await axios.patch(URL, data);
+    return response.data.message;
   } catch (error) {
     throw error;
   }
@@ -129,6 +149,36 @@ export const deletPlataformaAxios = async (id) => {
   try {
     const URL = `${URL_BASE}/platform/delete/${id}`;
     const response = await axios.delete(URL);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const addJogoPlataformaAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/platform/game`;
+    const response = await axios.post(URL, data);
+    return response.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getJogosPlataformaAxios = async (id) => {
+  try {
+    const URL = `${URL_BASE}/platform/${id}/games`;
+    const response = await axios.get(URL);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deletJogosPlataformaAxios = async (data) => {
+  try {
+    const URL = `${URL_BASE}/platform/delete-game`;
+    const response = await axios.delete(URL, {data});
     return response.data.message;
   } catch (error) {
     throw error;
