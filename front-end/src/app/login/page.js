@@ -10,7 +10,7 @@ import NavBar from "@/components/navbar"
 
 
 export default function Login() {
-  const [user, setName] = useState("")
+  const [user, setName] = useState("") 
   const [password, setPassword] = useState("")
   const { push } = useRouter()
 
