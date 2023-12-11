@@ -1,0 +1,674 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1f27;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  color: #f4f4f4;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* Carousel.css */
+#myCarousel {
+  margin-top: 60px;
+}
+
+.carousel-inner {
+  border-radius: 10px;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.carousel-img {
+  height: 580px;
+}
+
+.carousel-caption {
+  background-color: rgba(10, 10, 10, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.carousel-caption-h5 {
+  color: #fff;
+}
+
+.carousel-caption-p {
+  color: #fff;
+}
+
+/*CSS NavBar*/
+.nav {
+  background-color: #1b1f27;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.nav-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-li {
+  margin-right: 20px;
+}
+
+.nav-li-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+
+.nav-li-link:hover {
+  color: #ffd700;
+}
+
+.nav-li-link.active {
+  color: #1d0547;
+}
+
+/* CSS Page Login*/
+.area-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #181920;
+  border-radius: 10px;
+  width: 375px;
+  height: 425px;
+  padding: 35px;
+}
+
+.login-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.login-input {
+  margin-top: 10px;
+  background-color: #252A34;
+  padding-left: 10px;
+  color: #CBD0F7;
+  border: none;
+  height: 45px;
+  outline: none;
+  border-radius: 8px;
+}
+
+input::placeholder {
+  color: #CBD0F7;
+  font-size: 14px;
+  width: 260px;
+
+}
+
+.login img {
+  width: 80px;
+  height: auto;
+}
+
+.login-span {
+  font-size: 12px;
+  margin: 3px 0 0 1px;
+  color: #b40606;
+  display: none;
+}
+
+.login-input-submit[type="submit"] {
+  margin-top: 10px;
+  padding-left: 10px;
+  display: block;
+  background-color: #5568fe;
+  color: #CBD0F7;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  height: 45px;
+  border: 5px;
+  border-radius: 8px;
+}
+
+.login-input-submit[type="submit"]:hover {
+  background-color: #202020;
+}
+
+#p1 {
+  color: #CBD0F7;
+  margin-top: 10px;
+}
+
+a {
+  color: #5568fe;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+#a1 {
+  color: #CBD0F7;
+  margin-left: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+/* CSS Cadastro*/
+.cadastro-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.cadastro-div {
+  margin: 20px 0;
+}
+
+.cadastro-span {
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.cadastro-span:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+/*CSS Card Games*/
+.home-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.card-div {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px;
+  text-align: center;
+}
+
+.card-h3 {
+  color: #b40606;
+  font-size: 1.2em;
+}
+
+.card-p {
+  color: #CBD0F7;
+  margin: 5px 0;
+
+}
+
+.span_card {
+  color: gold;
+  margin-right: 10px;
+}
+
+.card-button {
+  background-color: #5568fe;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.card-button:hover {
+  background-color: #202020;
+}
+
+
+/* CSS de Noticias */
+
+.noticias {
+  margin: 50px;
+}
+
+h1 {
+  color: #b40606;
+  text-align: center;
+}
+
+h2 {
+  color: gold;
+}
+
+h3 {
+  color: white;
+}
+
+h4 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  color: #3CFAD8;
+}
+
+/* CSS de Sobre Nós */
+
+.sobre {
+  margin: 50px;
+}
+
+.sobre-p {
+  color: #3CFAD8;
+  font-size: large;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icons img {
+  width: 30px;
+  margin: 10px;
+}
+
+.cj-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.cj-input,
+.cj-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.select-cj {
+  background-color: #fff;
+}
+
+.cj-input-btn {
+  width: 100%;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cj-input-btn:hover {
+  background-color: #45a049;
+}
+
+/* Adicionando um estilo básico para o layout responsivo */
+@media only screen and (max-width: 600px) {
+  form {
+    width: 80%;
+  }
+}
+
+/* Crud Lista de Jogos*/
+
+.lista-jogos {
+  max-width: 800px;
+}
+
+.lista-jogos-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.lista-jogos-title img {
+  cursor: pointer;
+}
+
+.lista-jogos-h1 {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.lista-jogos-ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-jogos-li {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista-jogos-p {
+  margin: 0;
+}
+
+.lista-jogos-input[type="button"] {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #5568fe;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.lista-jogos-input[type="button"]:hover {
+  background-color: #5568fe;
+}
+
+.lista-jogos-input[type="button"]:last-child {
+  background-color: #f44336;
+}
+
+.lista-jogos-input[type="button"]:last-child:hover {
+  background-color: #d32f2f;
+}
+
+/*CSS Comunidade*/
+.div-chat {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 5px;
+}
+
+.input-chat-message {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.input-chat-btn {
+  background-color: #4caf50;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  width: 25%;
+  padding: 5px;
+}
+
+.input-chat-btn:hover {
+  background-color: #45a049;
+}
+
+.chat-messages {
+  width: 100%;
+  height: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  maxHeight: 300px;
+  overflow: hidden;
+  overflowY: auto;
+  position: fixed;
+  bottom: 50px;
+}
+
+/*CSS do createUser*/
+
+.area-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #181920;
+  border-radius: 10px;
+  width: 600px;
+  height: 565px;
+  padding: 35px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.336);
+}
+
+.createUser-form {
+  display: flex;
+  width: 100%;
+  top: 100%;
+  flex-direction: column;
+}
+
+.titulo {
+  text-align: center;
+  color: #b40606;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+
+}
+
+.create-input {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #252A34;
+  padding-left: 10px;
+  color: #CBD0F7;
+  border: none;
+  height: 45px;
+  outline: none;
+  border-radius: 8px;
+}
+
+.create-input:focus {
+  border: 1px solid #CBD0F7;
+}
+
+.create-button {
+  display: block;
+  background-color: #5568fe;
+  color: #CBD0F7;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  width: 535px;
+  border-radius: 8px;
+  padding: 5px;
+  margin-top: 20px;
+}
+
+.create-button:hover {
+  background-color: #252A34;
+}
+
+.area-recuperar-senha {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.recuperar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #181920;
+  border-radius: 10px;
+  width: 365px;
+  height: 320px;
+  padding: 35px;
+
+}
+
+.recuperar-senha {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+#p2 {
+  color: #CBD0F7;
+}
+
+#p3 {
+  color: #CBD0F7;
+}
+
+.recuperar img {
+  width: 60px;
+  height: auto;
+}
+
+.recuperar-span {
+  font-size: 12px;
+  margin: 3px 0 0 1px;
+  color: #b40606;
+  display: none;
+}
+
+.cj-input-btn {
+  background-color: #5568fe;
+  border-radius: 8px;
+}
+
+.recuperar-input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #252A34;
+  padding-left: 10px;
+  color: #CBD0F7;
+  border: none;
+  height: 45px;
+  outline: none;
+  border-radius: 8px;
+}
+
+.recuperar-botao {
+  margin-top: 10px;
+  padding-left: 10px;
+  display: block;
+  background-color: #5568fe;
+  color: #CBD0F7;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  height: 35px;
+  border: 5px;
+  border-radius: 8px;
+}
+
+/*Adicionando um estilo básico para o layout responsivo */
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px; 
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .carousel-img {
+    height: 300px; 
+  }
+
+  .login,
+  .create,
+  .recuperar {
+    width: 80%; 
+  }
+
+  .create-button {
+    width: 100%; 
+  }
+
+  .lista-jogos-title img,
+  .lista-jogos-h1 {
+    font-size: 18px; 
+  }
+}
+
+
+@media only screen and (max-width: 400px) {
+  .nav-logo-link {
+    font-size: 1.2rem; 
+  }
+
+  .nav-li-link {
+    font-size: 0.8rem; 
+  }
+
+  .card-div {
+    width: 100%; 
+    margin: 40px 0;
+  }
+
+  .card-h3 {
+    font-size: 1rem; 
+  }
+
+  .card-button {
+    padding: 8px 15px; 
+    font-size: 0.9em; 
+  }
+
+  .chat-messages {
+    height: 60%; 
+  }
+
+  .input-chat-btn {
+    width: 30%; 
+  }
+}

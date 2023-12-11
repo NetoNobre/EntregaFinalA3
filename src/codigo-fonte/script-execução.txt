@@ -1,0 +1,33 @@
+Scripts para execução do projeto:
+
+•Baixar o MySQL
+•Login e senha do Banco de dados são:
+login: root
+senha: 123456
+•Após baixar o MySQL e ter feito o login, assim que o projeto for aberto, iniciará na pasta EntregaFinalA3.
+•Abra dois terminal no Vs Code: Ctrl + shift + '
+• Após isso verá que está na pasta EntregaFinalA3, é necessário entrar na pasta front-end e back-end, para isso digite no terminal: 
+
+cd src
+cd front-end
+Após entrar na pasta cd front-end, digite npm install. 
+
+Logo após faça o mesmo para a pasta back-end, abra o outro terminal e digite:
+
+cd src
+cd back-end
+
+Feito isso, dentro da pasta back-end, digite: npm install
+Após todas as dependências serem instaladas, ainda dentro da pasta back-end, digite para iniciar o banco de dados: 
+npm start
+
+Depois disso entre novamente no outro terminal onde está aberto a pasta  front-end:
+
+
+Já dentro da pasta, digite: 
+npm run dev
+
+Feito isso irá aparecer o link:
+localhost:3000
+
+Segure CTRL e clique em cima do link, e então o projeto será aberto no seu navegador.
